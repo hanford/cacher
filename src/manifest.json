@@ -28,7 +28,6 @@
 			"background/database.js",
 			"background/cacher.js",
 			"background/headers.js",
-			"background/UtilKeys.js",
 			"background/index.js"
 		]
 	}
