@@ -1,0 +1,35 @@
+{
+	"name": "cacher",
+	"manifest_version": 2,
+	"version": "0.0.0",
+	"description": "Overriding cache policies",
+	"permissions": [
+		"*://*/*",
+		"storage",
+		"webRequest",
+		"webRequestBlocking",
+		"tabs"
+	],
+	"page_action": {
+		"default_title": "Cacher",
+		"default_icon": "assets/cache_black.png",
+		"default_popup": "/index.html"
+	},
+	"content_scripts": [{
+		"matches": [
+			"http://*/*",
+			"https://*/*"
+		],
+		"js": ["/install.js"],
+		"run_at": "document_end"
+	}],
+	"background": {
+		"scripts": [
+			"background/database.js",
+			"background/cacher.js",
+			"background/headers.js",
+			"background/UtilKeys.js",
+			"background/index.js"
+		]
+	}
+}
